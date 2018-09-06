@@ -2,6 +2,7 @@
 Perl programming language - Notes for remind
 
 Perl ? [Perl.Org](https://www.perl.org/)
+
 Download Perl = [https://www.perl.org/get.html](https://www.perl.org/get.html)
 
 <h3>Perl Basic</h3>
@@ -76,4 +77,17 @@ open(FAS,">temporaryFiles/printTest.txt");
   print FAS qq~       |    Print Here    |         \n~;
   print FAS qq~       --------------------         \n~;
 close(FAS);
+```
+
+Ajax with Perl Backend Example
+```Javascript
+function getDataReprint(){
+    \$.ajax({
+        url      : 'serviceProcessor/pageBarcodeControlProcessor.cgi',
+        type     : 'POST',
+        data     : {"headerRequest" : JSON.stringify(getDataReprintData())},
+        success  : function(response) {getDataReprintResult(response)},
+        error    : function(e) {onError(e);}
+    });
+}
 ```
